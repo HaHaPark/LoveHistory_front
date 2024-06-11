@@ -35,9 +35,9 @@ const Login = ({ navigation }) => {
         
         // coupleId가 있을 경우 RealHome으로, 없을 경우 Home으로 이동
         if (couple && couple.coupleId) {
-          navigation.navigate('RealHome', { userId: user.id, username: user.username, coupleId: couple.coupleId, coupleDate: couple.coupleDate, userId1: couple.userId1, userId2: couple.userId1 });
+          navigation.navigate('RealHome', { userId: user.id, username: user.username, coupleId: couple.coupleId, coupleDate: couple.coupleDate, userId1: couple.userId1, userId2: couple.userId2 });
         } else {
-          navigation.navigate('Home', { userId: user.id });
+          navigation.navigate('Home', { Id: user.id });
         }
       } else {
         Alert.alert('Login Failed', response.data.message || 'Invalid credentials');

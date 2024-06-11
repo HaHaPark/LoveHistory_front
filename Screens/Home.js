@@ -31,7 +31,10 @@ const Home = ({ route, navigation }) => {
         });
   
         if (response.status === 200) {
-          Alert.alert('Couple Created', `Couple Code: ${response.data}`);
+          const createData = response.data;
+        
+          Alert.alert('Couple Created', `Couple Code: ${createData.coupleCode}`);
+          navigation.navigate('Login');
         } else {
           Alert.alert('Error', 'Failed to create couple');
         }
@@ -51,7 +54,8 @@ const Home = ({ route, navigation }) => {
       });
 
       if (response.status === 200) {
-        Alert.alert('Success', response.data);
+        Alert.alert('Success');
+        navigation.navigate('Login');
       } else {
         Alert.alert('Error', 'Failed to join couple');
       }
