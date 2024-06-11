@@ -39,35 +39,35 @@ const Signup = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Sign Up</Text>
+      <Text style={styles.title}>회원가입</Text>
       <TextInput
         style={styles.input}
-        placeholder="User ID"
+        placeholder="ID를 입력해주세요"
         value={userId}
         onChangeText={setUserId}
       />
       <TextInput
         style={styles.input}
-        placeholder="Username"
+        placeholder="이름을 입력해주세요"
         value={username}
         onChangeText={setUsername}
       />
       <TextInput
         style={styles.input}
-        placeholder="Phone"
+        placeholder="전화번호를 입력해주세요"
         value={phone}
         onChangeText={setPhone}
       />
       <TextInput
         style={styles.input}
-        placeholder="Password"
+        placeholder="비밀번호를 입력해주세요"
         value={password}
         onChangeText={setPassword}
         secureTextEntry
       />
-      <Button title="Sign Up" onPress={handleSignup} />
+      <Button title="회원가입하기" onPress={handleSignup} />
       <Button
-        title="Already have an account? Login"
+        title="로그인 하기"
         onPress={() => navigation.navigate('Login')}
         color="blue"
       />

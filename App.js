@@ -8,6 +8,11 @@ import AdminPage from './Screens/AdminPage';
 import EditQuestionPage from './Screens/EditQuestionPage';
 import RealHome from './Screens/RealHome';
 import EditDate from './Screens/EditDate';
+import DateRecords from './Screens/DateRecords';
+import AddDateRecord from './Screens/AddDateRecord';
+import EditRecord from './Screens/EditRecord';
+
+
 import { StyleSheet } from 'react-native';
 
 // Stack Navigator 생성
@@ -24,6 +29,9 @@ export default function App() {
         <Stack.Screen name="EditQuestionPage" component={EditQuestionPage} />
         <Stack.Screen name="RealHome" component={RealHome} />
         <Stack.Screen name="EditDate" component={EditDate} />
+        <Stack.Screen name="DateRecords" component={DateRecords} />
+        <Stack.Screen name="AddDateRecord" component={AddDateRecord} />
+        <Stack.Screen name="EditRecord" component={EditRecord} />
       </Stack.Navigator>
     </NavigationContainer>
   );

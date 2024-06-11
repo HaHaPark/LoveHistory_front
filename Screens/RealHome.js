@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet , Alert} from 'react-native';
+import { View, Text, Button, StyleSheet , Alert, Image} from 'react-native';
 import axios from 'axios';
 
 const RealHome = ({ route, navigation }) => {
@@ -40,12 +40,15 @@ const RealHome = ({ route, navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>RealHome Screen</Text>
-      <Text style={styles.text}>Username: {username}</Text>
-      <Text style={styles.text}>CoupleID: {coupleId}</Text>
-      <Text style={styles.text}>주목~~  {userId1}  님과  {userId2} 사귄다</Text>
-      <Text style={styles.text}>사귄 날짜: {coupleDate}</Text>
-      <Text style={styles.text}>D+{dPlusDays}일</Text>
+       <Image
+            source={require('../assets/love.png')} // Replace './path/to/your/image.png' with the actual path
+            style={styles.logo}
+        />
+      <Text style={styles.text}>이름 : {username}</Text>
+      {/* <Text style={styles.text}>CoupleID: {coupleId}</Text> */}
+      <Text style={styles.text}>"{userId1}"  님과  "{userId2}"  님이 연애중</Text>
+      <Text style={styles.text}>사귄 날짜 : {coupleDate}</Text>
+      <Text style={styles.text}>{dPlusDays} 일째 연애중</Text>
 
       <View style={styles.buttonContainer}>
         <Button
@@ -57,7 +60,7 @@ const RealHome = ({ route, navigation }) => {
           onPress={() => navigation.navigate('EditDate', { username, coupleId, coupleDate, userId1, userId2 })}
         />
       </View>
-      <Button title="Logout" onPress={handleLogout} />
+      <Button title="로그아웃" onPress={handleLogout} />
     </View>
   );
 };
@@ -83,6 +86,12 @@ const styles = StyleSheet.create({
     width: '100%',
     justifyContent: 'space-around',
   },
+
+  logo: {
+    width: 130,
+    height: 130,
+    marginBottom: 30,
+},
 });
 
 export default RealHome;

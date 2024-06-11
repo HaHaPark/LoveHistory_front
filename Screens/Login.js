@@ -8,7 +8,7 @@ const Login = ({ navigation }) => {
 
   const handleLogin = async () => {
     if (userId === 'admin' && password === '0000') {
-      Alert.alert('Admin Login', 'Welcome, Admin!');
+      Alert.alert('관리자 로그인', '관리자 아이디로 로그인하였습니다.');
       navigation.navigate('AdminPage'); // AdminPage로 이동
       return;
     }
@@ -31,7 +31,7 @@ const Login = ({ navigation }) => {
         const couple = loginRes.couple;
 
         console.log(response.data);
-        Alert.alert('Login Successful', `Welcome back, ${user.username}!`);
+        Alert.alert('로그인이 완료되었습니다.', `안녕하세요, ${user.username} 님!`);
         
         // coupleId가 있을 경우 RealHome으로, 없을 경우 Home으로 이동
         if (couple && couple.coupleId) {
@@ -55,21 +55,21 @@ const Login = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Login</Text>
+      <Text style={styles.title}>로그인</Text>
       <TextInput
         style={styles.input}
-        placeholder="User ID"
+        placeholder="ID를 입력해주세요"
         value={userId}
         onChangeText={setUserId}
       />
       <TextInput
         style={styles.input}
-        placeholder="Password"
+        placeholder="비밀번호를 입력해주세요"
         value={password}
         onChangeText={setPassword}
         secureTextEntry
       />
-      <Button title="Login" onPress={handleLogin} />
+      <Button title="로그인하기" onPress={handleLogin} />
     </View>
   );
 };

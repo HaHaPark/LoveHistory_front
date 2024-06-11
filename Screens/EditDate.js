@@ -17,7 +17,7 @@ const EditDate = ({ route, navigation }) => {
       });
 
       if (response.status === 200) {
-        Alert.alert('Success', 'Couple date has been updated.');
+        Alert.alert('성공', '수정에 성공했습니다.');
         navigation.navigate('RealHome', { username, coupleId, coupleDate: newCoupleDate, userId1, userId2 });
       } else {
         Alert.alert('Update Failed', response.data.message || 'Failed to update couple date');
@@ -33,14 +33,14 @@ const EditDate = ({ route, navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Edit Couple Date</Text>
+      <Text style={styles.title}>사귄 날짜 수정</Text>
       <TextInput
         style={styles.input}
         value={newCoupleDate}
         onChangeText={handleDateChange}
         placeholder="Enter new couple date (YYYY-MM-DD)"
       />
-      <Button title="Save Date" onPress={handleSaveDate} />
+      <Button title="저장하기" onPress={handleSaveDate} />
     </View>
   );
 };
