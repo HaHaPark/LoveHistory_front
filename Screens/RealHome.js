@@ -3,7 +3,7 @@ import { View, Text, Button, StyleSheet , Alert} from 'react-native';
 import axios from 'axios';
 
 const RealHome = ({ route, navigation }) => {
-  const { userId, username,coupleId, coupleDate } = route.params;
+  const { userId, username,coupleId, coupleDate, userId1, userId2 } = route.params;
 
   // 커플 시작 날짜로부터 현재까지의 경과 일수 계산
   const calculateDPlus = (date) => {
@@ -16,7 +16,7 @@ const RealHome = ({ route, navigation }) => {
 
   const handleLogout = async () => {
     try {
-      const response = await axios.post('http://192.168.0.80:8080/users/logout', {}, {
+      const response = await axios.post('http://192.168.200.136:8080/users/logout', {}, {
         withCredentials: true, // 세션을 사용하고 있다면 필요
       });
 
@@ -41,8 +41,9 @@ const RealHome = ({ route, navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>RealHome Screen</Text>
-      <Text style={styles.text}>UserID: {username}</Text>
+      <Text style={styles.text}>Username: {username}</Text>
       <Text style={styles.text}>CoupleID: {coupleId}</Text>
+      <Text style={styles.text}>주목~~  {userId1}  님과  {userId2} 사귄다</Text>
       <Text style={styles.text}>사귄 날짜: {coupleDate}</Text>
       <Text style={styles.text}>D+{dPlusDays}일</Text>
 
@@ -53,7 +54,7 @@ const RealHome = ({ route, navigation }) => {
         />
         <Button
           title="사귄 날짜 수정"
-          onPress={() => navigation.navigate('EditCoupleDate', { userId, coupleId, coupleDate })}
+          onPress={() => navigation.navigate('EditDate', { username, coupleId, coupleDate, userId1, userId2 })}
         />
       </View>
       <Button title="Logout" onPress={handleLogout} />

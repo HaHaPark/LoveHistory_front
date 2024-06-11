@@ -16,7 +16,7 @@ const Signup = ({ navigation }) => {
     };
 
     try {
-      const response = await fetch('http://192.168.0.80:8080/users', {
+      const response = await fetch('http://192.168.200.136:8080/users', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

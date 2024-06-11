@@ -14,7 +14,7 @@ const EditQuestionPage = ({ route, navigation }) => {
 
   const fetchQuestions = async () => {
     try {
-      const response = await axios.get('http://192.168.0.80:8080/question');
+      const response = await axios.get('http://192.168.200.136:8080/question');
       setQuestions(response.data);
       setLoading(false);
     } catch (error) {
@@ -27,7 +27,7 @@ const EditQuestionPage = ({ route, navigation }) => {
 
   const handleUpdate = async () => {
     try {
-      await axios.put(`http://192.168.0.80:8080/question/${questionId}`, {
+      await axios.put(`http://192.168.200.136:8080/question/${questionId}`, {
         questionContent,
       });
       await fetchQuestions(); // 질문 수정 후, 질문 목록을 다시 로드합니다.

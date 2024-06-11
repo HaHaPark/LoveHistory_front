@@ -10,7 +10,7 @@ const AdminPage = ({ navigation }) => {
 //   useEffect(() => {
 //     const fetchQuestions = async () => {
 //       try {
-//         const response = await axios.get('http://192.168.0.80:8080/question');
+//         const response = await axios.get('http://192.168.200.136:8080/question');
 //         setQuestions(response.data);
 //         setLoading(false);
 //       } catch (error) {
@@ -24,7 +24,7 @@ const AdminPage = ({ navigation }) => {
 
   const fetchQuestions = async () => {
     try {
-      const response = await axios.get('http://192.168.0.80:8080/question');
+      const response = await axios.get('http://192.168.200.136:8080/question');
       setQuestions(response.data);
       setLoading(false);
     } catch (error) {

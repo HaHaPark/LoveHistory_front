@@ -7,6 +7,7 @@ import Home from './Screens/Home';
 import AdminPage from './Screens/AdminPage';
 import EditQuestionPage from './Screens/EditQuestionPage';
 import RealHome from './Screens/RealHome';
+import EditDate from './Screens/EditDate';
 import { StyleSheet } from 'react-native';
 
 // Stack Navigator 생성
@@ -22,6 +23,7 @@ export default function App() {
         <Stack.Screen name="AdminPage" component={AdminPage} />
         <Stack.Screen name="EditQuestionPage" component={EditQuestionPage} />
         <Stack.Screen name="RealHome" component={RealHome} />
+        <Stack.Screen name="EditDate" component={EditDate} />
       </Stack.Navigator>
     </NavigationContainer>
   );

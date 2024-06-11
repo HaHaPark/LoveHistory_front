@@ -22,7 +22,7 @@ const Home = ({ route, navigation }) => {
         // 'YYYY-MM-DD' 형식으로 변환
         const coupleDateFormatted = date.toISOString().split('T')[0];
   
-        const response = await axios.post(`http://192.168.0.80:8080/couple/create/${Id}`, {
+        const response = await axios.post(`http://192.168.200.136:8080/couple/create/${Id}`, {
           coupleDate: coupleDateFormatted
         }, {
           headers: {
@@ -43,7 +43,7 @@ const Home = ({ route, navigation }) => {
 
   const handleJoinCouple = async () => {
     try {
-      const response = await axios.post(`http://192.168.0.80:8080/couple/join/${Id}`, null, {
+      const response = await axios.post(`http://192.168.200.136:8080/couple/join/${Id}`, null, {
         params: { coupleCode },
         headers: {
           'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ const Home = ({ route, navigation }) => {
 
   const handleLogout = async () => {
     try {
-      const response = await axios.post('http://192.168.0.80:8080/users/logout', {}, {
+      const response = await axios.post('http://192.168.200.136:8080/users/logout', {}, {
         withCredentials: true, // 세션을 사용하고 있다면 필요
       });
 

@@ -19,7 +19,7 @@ const Login = ({ navigation }) => {
     };
 
     try {
-      const response = await axios.post('http://192.168.0.80:8080/users/login', loginReq, {
+      const response = await axios.post('http://192.168.200.136:8080/users/login', loginReq, {
         headers: {
           'Content-Type': 'application/json',
         },
@@ -35,7 +35,7 @@ const Login = ({ navigation }) => {
         
         // coupleId가 있을 경우 RealHome으로, 없을 경우 Home으로 이동
         if (couple && couple.coupleId) {
-          navigation.navigate('RealHome', { userId: user.id, username: user.username, coupleId: couple.coupleId, coupleDate: couple.coupleDate });
+          navigation.navigate('RealHome', { userId: user.id, username: user.username, coupleId: couple.coupleId, coupleDate: couple.coupleDate, userId1: couple.userId1, userId2: couple.userId1 });
         } else {
           navigation.navigate('Home', { userId: user.id });
         }
