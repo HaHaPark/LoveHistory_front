@@ -51,7 +51,7 @@ const AddDateRecord = ({ navigation, route }) => {
             <Text style={styles.question}>{question.questionContent}</Text>
             <TextInput
                 style={styles.input}
-                placeholder="사귄 날짜 (YYYY-MM-DD)"
+                placeholder="데이트 날 (YYYY-MM-DD)"
                 value={datingDate}
                 onChangeText={setDatingDate}
             />
